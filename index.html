@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paul Uwaifo - Profile</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f0f2f5;
+            padding: 20px;
+        }
+
+        .profile-card {
+            background: white;
+            max-width: 400px;
+            width: 100%;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        img[data-testid="profilePicture"] {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            object-fit: cover;
+        }
+
+        h1[data-testid="fullName"] {
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+
+        p[data-testid="jobTitle"] {
+            color: #4a5568;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .bio {
+            color: #718096;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .detail {
+            margin: 0.8rem 0;
+            color: #2d3748;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .social-links a {
+            color: #4299e1;
+            text-decoration: none;
+        }
+
+        #utc-time {
+            color: #718096;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-card">
+        <img src="/assets/img.jpg" alt="Paul Uwaifo" data-testid="profilePicture">
+        <h1 data-testid="fullName">Paul Uwaifo</h1>
+        <p data-testid="jobTitle">Frontend Developer</p>
+        <div data-testid="shortBio" class="bio">
+            Passionate frontend developer with a love for creating interactive web applications. 
+            Currently focused on mastering modern JavaScript frameworks and responsive design principles. 
+            Believe in continuous learning and building solutions that make digital experiences seamless.
+        </div>
+        <div data-testid="currentLocation" class="detail">📍 Lagos, Nigeria</div>
+        <div data-testid="emailAddress" class="detail">📧 uwaifopaul1@gmail.com</div>
+        <div data-testid="socialLinks" class="social-links">
+            <a href="https://github.com/pauluwaifo" target="_blank">GitHub</a>
+            <a href="www.linkedin.com/in/paul-uwaifo-68bb032a6" target="_blank">LinkedIn</a>
+        </div>
+        <div id="utc-time" data-testid="currentTimeUTC"></div>
+    </div>
+
+    <script>
+        // UTC Time Display
+        function updateUTCTime() {
+            const now = new Date();
+            document.getElementById('utc-time').textContent = 
+                `Current UTC Time: ${now.toUTCString()}`;
+        }
+        updateUTCTime();
+    </script>
+</body>
+</html>
